@@ -28,26 +28,27 @@ The system consistently generates prompts with:
 - **Verification protocols** - how to test that it worked
 - **"What to avoid and WHY"** - prevents common mistakes with reasoning
 - **Extended thinking triggers** - for complex tasks requiring deep analysis
-- **Harmonic weighting** - asks Claude to think about trade-offs and optimal approaches
+- **Trade-off analysis** - considers multiple approaches and their implications
 
 Most developers don't naturally think through all these dimensions. This system does, every time.
 
 ## Installation
 
-1. Copy both files to your Claude Code slash commands directory:
+**Install globally** - commands work in any directory:
 
-   ```bash
-   cp create-prompt.md ~/.claude/commands/
-   cp run-prompt.md ~/.claude/commands/
-   ```
+```bash
+cp create-prompt.md ~/.claude/commands/
+cp run-prompt.md ~/.claude/commands/
+```
 
-2. Restart Claude Code or reload your commands
+**Create prompts directory per-project** (optional - created automatically if missing):
 
-3. Verify installation:
-   ```bash
-   # In Claude Code, type:
-   /create-prompt
-   ```
+```bash
+cd /your/project
+mkdir .prompts
+```
+
+The `/create-prompt` and `/run-prompt` commands are available everywhere. Each project stores its prompts in `.prompts/` in the working directory.
 
 ## Usage
 
@@ -115,18 +116,26 @@ For complex projects, Claude may break your request into multiple prompts:
 
 ### Prompt Organization
 
-All prompts are saved to `./prompts/` in your project:
+**Global commands, per-project prompts:**
 
 ```
-./prompts/
-├── 001-implement-user-authentication.md
-├── 002-create-dashboard-ui.md
-├── 003-setup-database-migrations.md
-└── completed/
-    └── 001-implement-user-authentication.md  # Archived after execution
+~/.claude/commands/          # Install once
+  create-prompt.md
+  run-prompt.md
+
+/your/project/              # Each project has its own prompts
+  .prompts/
+    ├── 001-implement-auth.md
+    ├── 002-create-dashboard.md
+    └── completed/
+        └── 001-implement-auth.md  # Archived after execution
+
+/another/project/           # Different project, different prompts
+  .prompts/
+    └── 001-setup-database.md
 ```
 
-After successful execution, prompts are automatically moved to `./prompts/completed/` with metadata.
+After successful execution, prompts are automatically moved to `.prompts/completed/` with metadata.
 
 ## Why This Works
 
@@ -200,7 +209,7 @@ Developed by TÂCHES for systematic, high-quality Claude Code workflows.
 
 ---
 
-**Watch the full explanation:** [Stop Telling Claude Code What To Do](https://youtube.com/@tachesteaches)
+**Watch the full explanation:** [Stop Telling Claude Code What To Do](https://www.youtube.com/@tachesteaches)
 
 **Questions or improvements?** Open an issue or submit a PR.
 
