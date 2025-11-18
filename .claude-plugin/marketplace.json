@@ -11,10 +11,7 @@
   "plugins": [
     {
       "name": "taches-cc-resources",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/glittercowboy/taches-cc-resources.git"
-      },
+      "source": "./",
       "description": "Skills and commands for prompt engineering, MCP servers, subagents, hooks, and productivity workflows",
       "version": "1.0.0",
       "strict": true
