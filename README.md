@@ -111,8 +111,6 @@ Generate content by type.
 Structure work at any scale.
 
 - [`/plan:brief`](./commands/plan/brief.md) - Problem, goals, constraints, success criteria
-- [`/plan:breakdown`](./commands/plan/breakdown.md) - Break big things into smaller tasks
-- [`/plan:sprint`](./commands/plan/sprint.md) - Sprint-sized work with acceptance criteria
 - [`/plan:project`](./commands/plan/project.md) - Full project plan with phases and milestones
 - [`/plan:mvp`](./commands/plan/mvp.md) - Cut to minimum viable scope
 
